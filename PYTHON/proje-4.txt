@@ -1,0 +1,29 @@
+'''3 tane okul icin bize bir not listesi verilecek.
+ Listedeki notlarin ortalamasini alacak ve bize kazanani soyleyecek bir program yazacagiz.
+ '''
+markList = [[89,56,76,54,88,77],[55,46,74,77,65],[87,89,95]]
+school1 = markList[0]
+school2 = markList[1]
+school3 = markList[2]
+ 
+def averageFunc(marks):
+     sum=0
+     for i in marks:
+         sum += i
+     
+     average = sum // len(marks)
+     return average
+
+averageMarkS1 = averageFunc(school1)
+averageMarkS2 = averageFunc(school2)
+averageMarkS3 = averageFunc(school3)
+
+if max(averageMarkS1,averageMarkS2,averageMarkS3) == averageMarkS1:
+    print('The highest average mark for the 3 schools is ' + str(averageMarkS1))
+    print('School1 gives the highest average')
+elif max(averageMarkS1,averageMarkS2,averageMarkS3) == averageMarkS2:
+    print('The highest average mark for the 3 schools is ' + str(averageMarkS2))
+    print('School2 gives the highest average')
+elif max(averageMarkS1,averageMarkS2,averageMarkS3) == averageMarkS3:
+    print('The highest average mark for the 3 schools is ' + str(averageMarkS3))
+    print('School3 gives the highest average')

@@ -1,0 +1,27 @@
+'''proje 3: plaka numarasi tek olan arabalar pazartesi, carsamba ve cuma gunu disari cikabilir. Cift olanlar ise sali, persembe ve cumartesi gunleri cikabilir. Pazar gunleri her ikisi de cikabilir. 
+Biz yani kullanici gunu girecek, program da  o gun hangi plakalarin cikabilecegini bize dondurecek.
+'''
+car_plates = ['AB1234' , 'CD5678' , 'EF901' , 'GH234' , 'JK567' , 'LM8901']
+day = input('enter a day:')
+odd_days = ['MO','WE','FR']
+even_days = ['TU','TH','SA']
+even_cars = []
+odd_cars = []
+
+for plate in car_plates:
+    last_elements_index = len(plate)-1
+    if int(plate[last_elements_index]) % 2 == 0:
+        plate.split()
+        even_cars.append(plate)
+    else:
+        plate.split()
+        odd_cars.append(plate)  
+
+if day in odd_days:
+    print(odd_cars)
+elif day in even_days:
+    print(even_cars)
+elif day == 'SU':
+    print(car_plates)
+else:
+    print('you entered an invalid day!')

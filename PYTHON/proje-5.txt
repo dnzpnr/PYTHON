@@ -1,0 +1,39 @@
+'''
+Bilgisayar ve ben 0 dan baslayalim. Zar atalim sirayla.
+Zardan cikan sonucu kendi sayimiza ekleyelim.
+40 a ilk ulasan oyunu kazansin.
+40 i gecen ise gectigi miktar kadar 40 tan geriye dussun.
+'''
+import random
+pc = 0
+you = 0
+while (pc or you) != 40:
+    ask = input('\'t\' for toss a die, or \'q\' for quit:')
+    if ask == 't':
+        dieNumberForPc = random.randint(1,6)
+        dieNumberForYou = random.randint(1,6)
+        pc += dieNumberForPc
+        you += dieNumberForYou
+        if pc > 40:
+            pc = 40 - (pc - 40)            
+            if you > 40:
+                you = 40 - (you - 40)
+        print('pc ' + str(dieNumberForPc) + ' numbers advanced.')
+        print('pc\'s number is ' + str(pc))
+        print('You progressed ' + str(dieNumberForYou) + ' numbers.')
+        print('your number is ' + str(you))
+        continue
+        
+    else:
+        print('you lost')
+        break
+    
+if ask == 't':
+    if pc == 40:
+        print('pc\'s number is ' + str(pc))
+        print('pc won!')
+    elif you == 40:
+        print('my number is ' + str(you))
+        print('you won!')
+    else:
+        print('something goes wrong!')

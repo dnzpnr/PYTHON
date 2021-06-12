@@ -1,0 +1,41 @@
+'''
+Papyon cizecek bir program yapacagiz. 
+Biz input girecegiz atiyorum 5 diye, program bize sunu dondurecek;
+*        *
+**      **
+***    ***
+****  ****
+**********
+****  ****
+***    ***
+**      **
+*        *
+'''
+
+#1.satirda 10 - 2*1 = 8 bosluk
+#2.satirda 10 - 2*2 = 6 bosluk
+#3.satirda 10 - 2*3 = 4 bosluk
+#4.satrida 10 - 2*4 = 2 bosluk
+#5.satirda 10 - 2*5 = 0 bosluk
+#...
+n= input('enter a number:')
+n = int(n)
+liste = list(range(1,n+1))
+for i in liste:
+    print('*' * i, end = '')
+    count = i
+    while count < (n - i) * 2 + i:
+        print(' ', end = '')
+        count += 1
+    print('*' * i)
+    
+liste.reverse()
+liste.remove(max(liste))
+    
+for i in liste:
+    print('*' * i, end = '')
+    count = i
+    while count < (n - i) * 2 + i:
+        print(' ', end = '')
+        count += 1
+    print('*' * i)
