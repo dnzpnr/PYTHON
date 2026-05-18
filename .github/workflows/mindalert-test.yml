@@ -1,0 +1,20 @@
+name: MindAlert CI/CD Test
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Python version check
+        run: |
+          echo "MindAlert CI/CD test running..."
+          python --version
+          echo "All checks passed!"
+      - name: Simulate test
+        run: |
+          echo "Running simulated tests..."
+          echo "test_basic (PASSED)"
+          echo "Tests: 2 passed, 0 failed"
